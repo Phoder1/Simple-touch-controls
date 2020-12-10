@@ -30,9 +30,6 @@ public class InputManager : MonoBehaviour {
     Vector2 joystickPosition;
     Vector2 joystickVector;
 
-    private void Start() {
-    }
-
     // Update is called once per frame
     void Update() {
         if (Input.touchCount > 0) {
@@ -99,9 +96,5 @@ public class InputManager : MonoBehaviour {
     }
     void MoveObject(Vector2 move) {
         slave.transform.position += (Vector3)(move * Time.deltaTime * joystickSpeed);
-    }
-
-    private void OnDrawGizmos() {
-        Gizmos.DrawWireSphere(slave.transform.position, itemDetectionDistance);
     }
 }
